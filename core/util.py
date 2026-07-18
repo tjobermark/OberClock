@@ -39,3 +39,11 @@ def rate_low_good(item, low_score, medium_score):
         return GOOD
     else:
         return POOR
+    
+def true_false_yes_no(value):
+    if value is True:
+        return "yes"
+    elif value is False:
+        return "no"
+    else:
+        return "invalid"

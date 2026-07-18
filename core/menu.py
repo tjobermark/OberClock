@@ -7,8 +7,9 @@ def show_main_menu():
     while True:
         report.welcome()
         print("1. Analyze PC Health")
-        print("2. About")
-        print("3. Exit")
+        print("2. View System Information")
+        print("3. About")
+        print("4. Exit")
         util.space()
 
         choice = input("Select an option:")
@@ -20,11 +21,16 @@ def show_main_menu():
 
         elif choice == "2":
             util.space()
+            report.print_system_info()
+            util.space()
+            
+            
+        elif choice == "3":
             print("OberClock v0.3alpha")
             print("Created by Thomas Obermark")
             util.space()
 
-        elif choice == "3":
+        elif choice == "4":
             util.space()
             print("Thank you for using OberClock!")
             break

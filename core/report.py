@@ -1,3 +1,4 @@
+from core import hardware
 from core import util
 
 GREAT = 5
@@ -18,18 +19,49 @@ def welcome():
     print("Version 3.0")
     util.space()
 
+def print_gpu_names():
+    gpu_names = hardware.get_gpu_names()
+    if gpu_names:
+        print(f"GPU: {', '.join(gpu_names)}")
+    else:
+        print("GPU: Not found")
+
+def print_ram_info():
+    ram_modules = hardware.get_ram_modules()
+    if ram_modules:
+        print("RAM:")
+        for module in ram_modules:
+            print(f"    - {module['manufacturer']} {module['part_number']} ({module['capacity']} GB @ {module['configured_speed_MHz']} MHz)")
+    else:
+        print("RAM: Not found")
+
+def print_system_info():
+    print("System Information:")
+    util.thin_divider()
+    util.space()
+    print(f"CPU: {hardware.get_cpu_name()}")
+    print_gpu_names()
+    print_ram_info()
+    print(f"XMP/EXPO: {util.true_false_yes_no(hardware.is_xmp_expo_enabled())}")
+    print(f"Motherboard: {hardware.get_board_name()}")
+    print(f"BIOS version: {hardware.get_bios_version()}")
+    print(f"Operating System: {hardware.get_os_name()}")
+    print(f"Storage: ")
+    for drive_name in hardware.get_storage_names():
+        print(f"    - {drive_name}")
+
 def print_ram_status_recommendations(ram_score, xmp_expo,):
     print("Recommendations for improving RAM Speed:")
     if ram_score == GREAT:
     
-        if xmp_expo == "yes":
+        if xmp_expo == True:
             print("1. No immediate action needed.")
         else:
             print("1. Enable XMP/EXPO for better performance.")
 
     elif ram_score == GOOD:
         
-        if xmp_expo == "yes":
+        if xmp_expo == True:
             print("1. No immediate action needed.")
         else:
             print("1. Enable XMP/EXPO for better performance.")

@@ -45,7 +45,7 @@ def analyze_pc():
 
     top_score = MAX_SCORE
 
-    xmp_expo = util.ask_yes_no("Do you have XMP/EXPO enabled? (yes/no): ")
+    xmp_expo = hardware.is_xmp_expo_enabled()
  
     report.print_report(ram_score, cpu_score, disk_score, total_score, top_score, rec_answer, xmp_expo)
 
