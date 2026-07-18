@@ -42,7 +42,7 @@ def print_system_info():
     print(f"CPU: {hardware.get_cpu_name()}")
     print_gpu_names()
     print_ram_info()
-    print(f"XMP/EXPO: {util.true_false_yes_no(hardware.is_xmp_expo_enabled())}")
+    print(f"XMP/EXPO enabled: {util.true_false_yes_no(hardware.is_xmp_expo_enabled())}")
     print(f"Motherboard: {hardware.get_board_name()}")
     print(f"BIOS version: {hardware.get_bios_version()}")
     print(f"Operating System: {hardware.get_os_name()}")
