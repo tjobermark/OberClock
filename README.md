@@ -9,14 +9,16 @@ A Windows PC health analyzer and future gaming optimizer written in Python.
 - CPU temperature analysis
 - Health scoring system
 - Personalized recommendations
+- Analyze PC components names
+- 
 
 ## Roadmap
 
 - [x] Modular codebase
 - [x] Automatic hardware detection
 - [ ] Automatic CPU temperature detection
-- [ ] GPU detection
-- [ ] RAM speed detection
+- [x] GPU detection
+- [x] RAM speed detection
 - [ ] Driver checking
 - [ ] Windows optimization
 - [ ] GUI
