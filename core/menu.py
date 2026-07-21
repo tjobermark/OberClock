@@ -1,6 +1,7 @@
 from core import util
 from core import analyze
 from core import report
+from core.version import version
 
 def show_main_menu():
 
@@ -26,7 +27,7 @@ def show_main_menu():
             
             
         elif choice == "3":
-            print("OberClock v0.3alpha")
+            print(f"OberClock v{version}")
             print("Created by Thomas Obermark")
             util.space()
 

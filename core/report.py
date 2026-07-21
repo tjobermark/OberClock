@@ -1,5 +1,6 @@
 from core import hardware
 from core import util
+from core.version import version
 
 GREAT = 5
 GOOD = 3
@@ -16,7 +17,7 @@ def welcome():
     util.thick_divider()
     print("PC Health Analyzer")
     util.space()
-    print("Version 3.0")
+    print(f"Version {version}")
     util.space()
 
 def print_gpu_names():
